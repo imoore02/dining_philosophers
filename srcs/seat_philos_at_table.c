@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:25:29 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/01 16:07:27 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/02 13:17:20 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ static void		set_values(t_concept *info, int i)
 	int errchk;
 	
 	info->philo[i].id = i + 1; //philo ids start at 1;
-	//printf("philo id: %d\n", info->philo[i].id);
+	printf("philo id (set_values): %d\n", info->philo[i].id);
 	info->philo[i].times_eaten = 0;
 	errchk = pthread_mutex_init(&info->philo[i].l_fork, NULL);
+	//printf("errchk (set_values): %d\n", errchk);
 	if (errchk != 0)
 		fuck_error(info, ERROR_MUTEX_INIT);
 }

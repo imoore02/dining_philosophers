@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:32:49 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/10/27 15:36:19 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/02 14:15:48 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,24 @@ static void	hesitate(t_concept *info)
 		if (errchk == -1)
 			fuck_error(info, ERROR_USLEEP);
 }
-*/
+
 void		do_for_x_time(long int time) //input the milliseconds to do this for
 {
 	int t;
 
 	t = time * 1000;
-	printf("%d\n", t);
 	usleep(t); //seconds to do the thing for according to the variable
-}
+}*/
 
-void	custom_usleep(t_concept *info, int time)
+void	do_for_x_time(t_concept *info, long int time)
 {
-	int	current;
+	int t;
 
-	current = whats_the_time(info);
-	while (!(info->death_status))
+	t = time * 1000;
+	printf("%d\n", info->death_status);
+	while (1)
 	{
-		if (whats_the_time(info) - current >= time) //counts up to  the time_to_whatever and if dead -> breaks
-			break ;
-		usleep(100); //waits for 0.1 milliseconds
+		usleep(t);
+		break ;
 	}
 }

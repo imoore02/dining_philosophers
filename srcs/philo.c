@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 13:37:15 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/01 15:26:42 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/02 13:38:50 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main(int argc, char **argv)
 			fuck_error(info, ERROR_MALLOC);
 		initialise(argc, argv, info);
 		start_the_feast(info);
-		//status
 	}
 	else
 		fuck_error(info, ERROR_INPUT_INVALID);

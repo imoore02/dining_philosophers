@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:45:15 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/01 16:25:08 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/02 14:13:26 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define ERROR_USLEEP "Error: Philosophers did not hesitate\n"
 # define ERROR_DIED "Error: Philosopher died and the ritual failed :(\n"
 # define NOT_ERROR_FULL "not an error just unfinished\n"
+# define ERROR_INPUT_CALC "Make sure that your 'time_to_die' argumnet is greater than the sum of the 'time_to_eat' and 'time_to_sleep' argumnets, otherwise your philosophers will surely perish!"
 
 //--structure to define a 'philosopher' and all their elements--//
 typedef struct	s_philo
@@ -73,17 +74,18 @@ void		start_the_feast(t_concept *info);
 
 //--feasting.c--//
 void		*feasting(void *voidptr_info);
-/*static void		pick_up_forks(t_philo *philo);
-static void		put_down_forks(t_philo *philo);
-static void 	nap_time_n_pondering(t_concept*info, t_philo *philo);
-static void		check_if_died(t_concept *info, t_philo *philo);*/
+//static void		pick_up_forks(t_philo *philo);
+//static void		put_down_forks(t_philo *philo);
+//static void 	nap_time_n_pondering(t_concept*info, t_philo *philo);
+
+//--death.c--//
+void		check_if_died(t_concept *info, t_philo *philo);
 
 //--time.c--//
 long int		whats_the_time(t_concept *info);
 //long int		elapsed_run_time(t_concept *info);
 //static void		hesitate(t_concept *info);
-void		do_for_x_time(long int time);
-void		custom_usleep(t_concept *info, int time);
+void	do_for_x_time(t_concept *info, long int time);
 
 //--print.c--//
 void		print(t_concept *info, t_philo *philo, int status_msg);

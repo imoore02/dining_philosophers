@@ -8,6 +8,7 @@ SRCS		= 	philo.c \
 				clean.c \
 				print.c \
 				time.c \
+				death.c \
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -pthread
