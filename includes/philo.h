@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:45:15 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/08 11:37:06 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/08 13:18:47 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 # define PHILO_H
 
 # include <stdlib.h>
-# include <unistd.h> //usleep//
+# include <unistd.h>
 # include <pthread.h>
-# include <sys/time.h> //timeval stuct//
+# include <sys/time.h>
 # include <stdio.h>
 
 //--definitions of macros for error codes--//
 # define ERROR_INPUT_INVALID "Invalid input: please enter 4 valid postitive non-zero integer(s). e.g. 8, 420, 696, +666\n"
 # define ERROR_MUTEX_INIT "Error: The forks couldn't be found!"
-# define ERROR_TABLE "Error: Table spontaniously combusted and the restaurant had to close down (so all philosophers probably starved to death but who knows really)\n"
 # define ERROR_LOCK_MUTEX "Error: One of the philosophers couldn't pick up her fork\n"
 # define ERROR_UNLOCK_MUTEX "Error: One of the philosophers wouldn't give up their fork!\n"
 # define ERROR_MUTEX_DESTROY "Error: Mutex did not perish and now its ghost lingers...\n"
@@ -32,8 +31,6 @@
 # define ERROR_THREAD_JOIN "Error: Threads could not be joined!\n"
 # define ERROR_TIME "Error: I don't how to read a clock so this just isn't going to work, sorry\n"
 # define ERROR_USLEEP "Error: Philosophers did not hesitate\n"
-# define ERROR_DIED "\n"
-# define NOT_ERROR_FULL "not an error just unfinished\n"
 
 //--structure to define a 'philosopher' and all their elements--//
 typedef struct	s_philo
@@ -45,6 +42,7 @@ typedef struct	s_philo
 	long int			time_birth_n_last_eaten;
 	long int			time_since_eaten;
 	pthread_t			thread;
+	char				*colour;
 	struct s_concept	*info;
 }						t_philo;
 
@@ -59,7 +57,6 @@ typedef struct	s_concept
 	long int			start_time;
 	pthread_mutex_t		print;
 	struct s_philo		*philo;
-	int					thread_id;
 	int					death_status;
 	pthread_t			death;
 }				t_concept;
