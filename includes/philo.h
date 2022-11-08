@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:45:15 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/08 13:18:47 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/08 13:21:20 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdio.h>
 
 //--definitions of macros for error codes--//
-# define ERROR_INPUT_INVALID "Invalid input: please enter 4 valid postitive non-zero integer(s). e.g. 8, 420, 696, +666\n"
+# define ERROR_INPUT_INVALID "Invalid input: please enter 4 valid postitive non-zero integer(s). e.g. 8, 420, 6590,\n"
 # define ERROR_MUTEX_INIT "Error: The forks couldn't be found!"
 # define ERROR_LOCK_MUTEX "Error: One of the philosophers couldn't pick up her fork\n"
 # define ERROR_UNLOCK_MUTEX "Error: One of the philosophers wouldn't give up their fork!\n"
@@ -31,6 +31,7 @@
 # define ERROR_THREAD_JOIN "Error: Threads could not be joined!\n"
 # define ERROR_TIME "Error: I don't how to read a clock so this just isn't going to work, sorry\n"
 # define ERROR_USLEEP "Error: Philosophers did not hesitate\n"
+# define ERROR_DIED "\n"
 
 //--structure to define a 'philosopher' and all their elements--//
 typedef struct	s_philo
