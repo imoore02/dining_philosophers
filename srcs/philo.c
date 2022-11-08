@@ -6,15 +6,23 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 13:37:15 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/02 13:38:50 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/07 22:22:02 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+//______________________________START HERE___________________________________//
+//note: functions appear in the order they are called;
 
-//--running process-//
-//(1) memory allocates for a structure (t_concept *info) that will contain all necessary information for the programs execution;
-//(2) initialises the structure -> sets values to a default, for t_philo *table_of_philos inside t_concept *info, you must memory allocate and initialise these as well;
+#include "../includes/philo.h"
+
+/*/--main--/*/
+//(1) memory allocates for a structure (t_concept *info) that will contain all
+//    necessary information for the programs execution;
+//(2) initialises the structure -> sets values to a default, for t_philo 
+//    *table_of_philos inside t_concept *info, you must memory allocate and 
+//    initialise these as well;
+//(3) 'start_the_feast()', line x (start_the_feast.c) -> to do multithreading;
+//(4) if wrong number of args was input -> 'fuck_error()', line x (clean.c) 
 int main(int argc, char **argv)
 {
 	t_concept *info;

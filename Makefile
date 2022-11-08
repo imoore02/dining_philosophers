@@ -25,7 +25,7 @@ all:			colour $(NAME)
 				echo "\\n\033[32;1m the philosophers cracked the tome open and there upon the withering pages lay... \033[0m \\n"
 				echo "\\n\033[32;1m the SECRET TO LIFE OF INFINITE DAY!!! \033[0m \\n"
 				echo "\\n\033[32;1m a sacred ritual begotten to time in which each philosopher must brandish one fork but may only eat with two... \033[0m \\n"
-				echo "\\n\033[32;1m they must slumber to avoid being slew and when awake think with all three eyes... \033[0m \\n"
+				echo "\\n\033[32;1m they must slumber else be slew and when awake think with all three eyes... \033[0m \\n"
 				echo "\\n\033[32;1m take heed, beware, for if they fumble, their timing stumble, all shall greet the grim reaper humble. \033[0m \\n"
 				echo "\\n\033[32;1m THE PHILOSOPHERS ARE READY FOR THE RITUAL \033[0m \\n"
 

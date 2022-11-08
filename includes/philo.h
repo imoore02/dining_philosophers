@@ -6,7 +6,7 @@
 /*   By: isobelmoore <isobelmoore@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:45:15 by isobelmoore       #+#    #+#             */
-/*   Updated: 2022/11/02 14:13:26 by isobelmoore      ###   ########.fr       */
+/*   Updated: 2022/11/08 11:37:06 by isobelmoore      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@
 # define ERROR_THREAD_JOIN "Error: Threads could not be joined!\n"
 # define ERROR_TIME "Error: I don't how to read a clock so this just isn't going to work, sorry\n"
 # define ERROR_USLEEP "Error: Philosophers did not hesitate\n"
-# define ERROR_DIED "Error: Philosopher died and the ritual failed :(\n"
+# define ERROR_DIED "\n"
 # define NOT_ERROR_FULL "not an error just unfinished\n"
-# define ERROR_INPUT_CALC "Make sure that your 'time_to_die' argumnet is greater than the sum of the 'time_to_eat' and 'time_to_sleep' argumnets, otherwise your philosophers will surely perish!"
 
 //--structure to define a 'philosopher' and all their elements--//
 typedef struct	s_philo
 {
-	int					id;
+	int			id;
 	pthread_mutex_t		l_fork;
 	struct s_philo		*r_philo;
 	int					times_eaten;
 	long int			time_birth_n_last_eaten;
 	long int			time_since_eaten;
 	pthread_t			thread;
+	struct s_concept	*info;
 }						t_philo;
 
 //--structure to encapsulate the concept and hold everything necessary for program to be executed - the master struct if you will--//
@@ -61,10 +61,11 @@ typedef struct	s_concept
 	struct s_philo		*philo;
 	int					thread_id;
 	int					death_status;
+	pthread_t			death;
 }				t_concept;
 
 //--initialise.c--//
-void 	initialise(int argc, char **argv, t_concept *info);
+void 		initialise(int argc, char **argv, t_concept *info);
 
 //--seat_philos_at_table.c--//
 void		seat_philos_at_table(t_concept *info);
@@ -74,18 +75,13 @@ void		start_the_feast(t_concept *info);
 
 //--feasting.c--//
 void		*feasting(void *voidptr_info);
-//static void		pick_up_forks(t_philo *philo);
-//static void		put_down_forks(t_philo *philo);
-//static void 	nap_time_n_pondering(t_concept*info, t_philo *philo);
 
 //--death.c--//
-void		check_if_died(t_concept *info, t_philo *philo);
+void		*death(void *voidptr_info);
 
 //--time.c--//
-long int		whats_the_time(t_concept *info);
-//long int		elapsed_run_time(t_concept *info);
-//static void		hesitate(t_concept *info);
-void	do_for_x_time(t_concept *info, long int time);
+long int	whats_the_time(t_concept *info);
+void		do_for_x_time(t_concept *info, long int time);
 
 //--print.c--//
 void		print(t_concept *info, t_philo *philo, int status_msg);
