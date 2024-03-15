@@ -1,5 +1,4 @@
 # dining_philosophers
-
 The Dining Philosophers Problem is a classic concurrency problem in computer science, originally formulated by Edsger Dijkstra in 1965. It illustrates the challenges of resource allocation and synchronization in a multi-threaded environment. It demonstrates the basics of process threading, and how work on the same memory space.
 
 ## Problem
